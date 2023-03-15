@@ -30,6 +30,7 @@ except ModuleNotFoundError as e:
 
 
 class MSDeformAttnFunction(Function):
+    # 设置为静态函数，前向传播
     @staticmethod
     def forward(ctx, value, value_spatial_shapes, value_level_start_index, sampling_locations, attention_weights, im2col_step):
         ctx.im2col_step = im2col_step
@@ -37,7 +38,8 @@ class MSDeformAttnFunction(Function):
             value, value_spatial_shapes, value_level_start_index, sampling_locations, attention_weights, ctx.im2col_step)
         ctx.save_for_backward(value, value_spatial_shapes, value_level_start_index, sampling_locations, attention_weights)
         return output
-
+    
+    # 设置为静态很熟，反向传播
     @staticmethod
     @once_differentiable
     def backward(ctx, grad_output):
