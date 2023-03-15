@@ -57,7 +57,7 @@ def get_extensions():
     include_dirs = [extensions_dir]
     ext_modules = [
         extension(
-            "MultiScaleDeformableAttention",
+            "MultiScaleDeformableAttention", # name
             sources,
             include_dirs=include_dirs,
             define_macros=define_macros,
