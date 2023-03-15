@@ -24,14 +24,14 @@ from setuptools import setup
 requirements = ["torch", "torchvision"]
 
 def get_extensions():
-    this_dir = os.path.dirname(os.path.abspath(__file__))
-    extensions_dir = os.path.join(this_dir, "src")
+    this_dir = os.path.dirname(os.path.abspath(__file__)) # 全局变量
+    extensions_dir = os.path.join(this_dir, "src") # src
 
     main_file = glob.glob(os.path.join(extensions_dir, "*.cpp"))
     source_cpu = glob.glob(os.path.join(extensions_dir, "cpu", "*.cpp"))
     source_cuda = glob.glob(os.path.join(extensions_dir, "cuda", "*.cu"))
 
-    sources = main_file + source_cpu
+    sources = main_file + source_cpu #路径
     extension = CppExtension
     extra_compile_args = {"cxx": []}
     define_macros = []
