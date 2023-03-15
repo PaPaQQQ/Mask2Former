@@ -66,6 +66,7 @@ def get_extensions():
     ]
     return ext_modules
 
+# 注册算子
 setup(
     name="MultiScaleDeformableAttention",
     version="1.0",
