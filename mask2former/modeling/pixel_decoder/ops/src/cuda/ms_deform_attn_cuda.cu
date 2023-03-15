@@ -21,7 +21,7 @@
 #include <cuda.h>
 #include <cuda_runtime.h>
 
-
+# 前向传播
 at::Tensor ms_deform_attn_cuda_forward(
     const at::Tensor &value, 
     const at::Tensor &spatial_shapes,
@@ -84,7 +84,7 @@ at::Tensor ms_deform_attn_cuda_forward(
     return output;
 }
 
-
+# 反向传播
 std::vector<at::Tensor> ms_deform_attn_cuda_backward(
     const at::Tensor &value, 
     const at::Tensor &spatial_shapes,
